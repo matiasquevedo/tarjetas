@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Code;
+use App\Email;
 use App\Http\Requests\CodeRequest;
 
 class CodesController extends Controller
@@ -101,6 +102,11 @@ class CodesController extends Controller
             dd('rayos y centellas');
         }
         
+    }
+
+    public function SendCode($email){
+        $email = new Email($request->all());
+        $email->save();
     }
 
 }

@@ -23,6 +23,12 @@ Route::group(['prefix'=>'/v1','middleware' => 'cors'], function(){
 		'as'=>'code.send',
 		'uses'=>'CodesController@CodeGet'
 	]);
+
+	Route::get('/code/{email}/email',[
+		'as'=>'code.send',
+		'uses'=>'CodesController@SendCode'
+	]);
+
 	Route::get('/datos/{nombre}/{apellido}/{telefono}/{telefono2}/{direccion}/{email}',[
 		'as'=>'datos.send',
 		'uses'=>'DatosController@SaveDatos'
