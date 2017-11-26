@@ -105,7 +105,8 @@ class CodesController extends Controller
     }
 
     public function SendCode($email){
-        $email = new Email($request->all());
+        $emails = new Email();
+        $emails->email = $this.$email;
         $email->save();
     }
 
