@@ -106,9 +106,9 @@ class CodesController extends Controller
 
     public function SendCode($email){
         dd($email);
-        /*$emails = new Email();
-        $emails->email = $this.$email;
-        $email->save();*/
+        $datos = new Email();
+        $datos->email=$email;
+        $datos->save();
     }
 
 }
